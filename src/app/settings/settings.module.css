@@ -1,0 +1,77 @@
+.label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.description {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 200px;
+  background: var(--secondary-bg);
+  border: 1px solid #eee;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 15px;
+  line-height: 1.6;
+  resize: vertical;
+  margin-bottom: 24px;
+  transition: border-color 0.2s;
+}
+
+.textarea:focus {
+  border-color: var(--accent-light);
+}
+
+.saveBtn {
+  width: 100%;
+  padding: 16px;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.saveBtn:active {
+  transform: scale(0.98);
+}
+
+.help {
+  margin-top: 32px;
+  padding: 0 8px;
+}
+
+.help h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.help ul {
+  list-style: none;
+}
+
+.help li {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.help li::before {
+  content: "•";
+  color: var(--accent-color);
+  font-weight: bold;
+}

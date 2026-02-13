@@ -1,0 +1,102 @@
+.captureContainer {
+  margin-bottom: 24px;
+}
+
+.uploadBox {
+  height: 300px;
+  background: var(--secondary-bg);
+  border: 2px dashed #ddd;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.uploadIcon {
+  font-size: 48px;
+}
+
+.previewContainer {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.preview {
+  width: 100%;
+  display: block;
+}
+
+.retakeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 8px 16px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  font-size: 14px;
+}
+
+.analyzeBtn {
+  width: calc(100% - 32px);
+  margin: 16px;
+  padding: 16px;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(109, 93, 252, 0.3);
+}
+
+.resultCard {
+  margin-top: 24px;
+  padding: 24px;
+}
+
+.resultGroup {
+  margin-bottom: 16px;
+}
+
+.resultGroup label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.resultGroup input, .resultGroup textarea {
+  width: 100%;
+  padding: 12px;
+  background: var(--secondary-bg);
+  border: 1px solid #eee;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+}
+
+.resultGroup textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.saveBtn {
+  width: 100%;
+  padding: 16px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 8px;
+}

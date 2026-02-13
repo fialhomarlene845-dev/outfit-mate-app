@@ -1,0 +1,100 @@
+.filterBar {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 8px 0 24px 0;
+  scrollbar-width: none;
+}
+
+.filterBar::-webkit-scrollbar {
+  display: none;
+}
+
+.filterBtn {
+  padding: 8px 20px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filterBtn.active {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.outfitCard {
+  padding: 0;
+  overflow: hidden;
+}
+
+.imageBox {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.cardContent {
+  padding: 20px;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-size: 11px;
+  background: var(--secondary-bg);
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.category {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+}
+
+.date {
+  font-size: 12px;
+  color: #bbb;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
