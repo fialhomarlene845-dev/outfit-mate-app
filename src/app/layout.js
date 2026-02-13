@@ -14,22 +14,15 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         
-        <nav className="bottom-nav glass">
+        <nav className="bottom-nav">
           <a href="/" className="nav-item active">
-            <span className="nav-icon">🏠</span>
             <span>首页</span>
           </a>
           <a href="/capture" className="nav-item">
-            <span className="nav-icon">📸</span>
-            <span>拍照</span>
+            <div className="capture-btn">＋</div>
           </a>
           <a href="/gallery" className="nav-item">
-            <span className="nav-icon">👗</span>
             <span>衣橱</span>
-          </a>
-          <a href="/settings" className="nav-item">
-            <span className="nav-icon">⚙️</span>
-            <span>设置</span>
           </a>
         </nav>
       </body>

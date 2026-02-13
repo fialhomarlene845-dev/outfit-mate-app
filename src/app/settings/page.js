@@ -1,54 +1,59 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "./settings.module.css";
+import { useRouter } from "next/navigation";
 
 export default function Settings() {
-  const [rules, setRules] = useState("");
-  const [saved, setSaved] = useState(false);
+    const [rules, setRules] = useState("");
+    const [saved, setSaved] = useState(false);
+    const router = useRouter();
 
-  useEffect(() => {
-    const savedRules = localStorage.getItem("ai_rules");
-    if (savedRules) setRules(savedRules);
-  }, []);
+    useEffect(() => {
+        const savedRules = localStorage.getItem("ai_rules");
+        if (savedRules) setRules(savedRules);
+    }, []);
 
-  const handleSave = () => {
-    localStorage.setItem("ai_rules", rules);
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
-  };
+    const handleSave = () => {
+        localStorage.setItem("ai_rules", rules);
+        setSaved(true);
+        setTimeout(() => setSaved(false), 2000);
+    };
 
-  return (
-    <div className="fade-in">
-      <header style={{ marginBottom: '32px' }}>
-        <h1 style={{ fontSize: '28px', fontWeight: '800' }}>AI 设置</h1>
-        <p style={{ color: 'var(--text-muted)' }}>定义您的穿搭助手语气与风格</p>
-      </header>
+    return (
+        <div className={styles.container}>
+            <header className={styles.header}>
+                <button className={styles.backBtn} onClick={() => router.back()}>✕</button>
+                <span className={styles.title}>AI 管家设定</span>
+                <button className={styles.saveBtn} onClick={handleSave}>
+                    {saved ? "已同步" : "保存"}
+                </button>
+            </header>
 
-      <div className="premium-card">
-        <label className={styles.label}>生成规则 (Prompt Rules)</label>
-        <p className={styles.description}>
-          在这里输入您希望 AI 遵循的规则。例如：“语气要温柔”、“标注材质信息”、“分类要包含季节”等。
-        </p>
-        <textarea
-          className={styles.textarea}
-          value={rules}
-          onChange={(e) => setRules(e.target.value)}
-          placeholder="例如：请用赞美的语气描述我的每一套衣服，并且一定要提到颜色搭配的亮点..."
-        />
-        
-        <button className={styles.saveBtn} onClick={handleSave}>
-          {saved ? "已保存 ✨" : "保存设置"}
-        </button>
-      </div>
+            <div className={styles.content}>
+                <div className={styles.ruleBox}>
+                    <p className={styles.label}>管家生成偏好 (Prompt Rules)</p>
+                    <textarea
+                        className={styles.textarea}
+                        value={rules}
+                        onChange={(e) => setRules(e.target.value)}
+                        placeholder="例如：请用赞美的语气描述我的衣服，一定要提到颜色搭配的亮点..."
+                    />
+                </div>
 
-      <div className={styles.help}>
-        <h3>默认规则：</h3>
-        <ul>
-          <li>提供具体的衣物描述（颜色、剪裁、纹理）</li>
-          <li>自动识别 3-5 个分类标签</li>
-          <li>建议适合的场合（如：通勤、约会、居家）</li>
-        </ul>
-      </div>
-    </div>
-  );
+                <div className={styles.helpCard}>
+                    <h3 className={styles.sectionTitle}>💡 灵感提示</h3>
+                    <ul className={styles.helpList}>
+                        <li>“标注衣物材质与面料细节”</li>
+                        <li>“为每件衣服推荐下周的天气搭配”</li>
+                        <li>“使用活泼开朗、富有感染力的语气”</li>
+                    </ul>
+                </div>
+
+                <div className={styles.aboutSection}>
+                    <p>Outfit Mate v2.0</p>
+                    <p>小红书风格 · 智享生活</p>
+                </div>
+            </div>
+        </div>
+    );
 }
